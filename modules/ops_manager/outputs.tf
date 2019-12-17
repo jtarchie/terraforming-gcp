@@ -21,7 +21,7 @@ output "ops_manager_ssh_private_key" {
 
 output "ops_manager_ssh_public_key" {
   sensitive = true
-  value     = "${format("ubuntu:%s", tls_private_key.ops-manager.public_key_openssh)}"
+  value     = "${tls_private_key.ops-manager.public_key_openssh}"
 }
 
 output "director_blobstore_bucket" {
